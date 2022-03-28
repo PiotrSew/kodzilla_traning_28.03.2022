@@ -8,9 +8,15 @@ def test_import_prime_factors():
         assert False, error
 
 
+def test_correct_number():
+    winner = prime_factors(3958159172)
+    assert winner == [2, 2, 11, 2347, 38329], f"expected [2, 2, 11, 2347, 38329], got {winner}"
+
+
 if __name__ == '__main__':
     for test in (
             test_import_prime_factors,
+            test_correct_number,
     ):
         print(f'{test.__name__}: ', end='')
         try:
