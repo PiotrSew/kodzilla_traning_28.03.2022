@@ -13,6 +13,14 @@ def test_correct_number():
     assert winner == [2, 2, 11, 2347, 38329], f"expected [2, 2, 11, 2347, 38329], got {winner}"
 
 
+def test_illegal_input_format():
+    try:
+        prime_factors('Ala ma kota')
+        assert False, "ValueError expected"
+    except ValueError:
+        pass
+
+
 if __name__ == '__main__':
     for test in (
             test_import_prime_factors,
