@@ -11,6 +11,8 @@ def test_import_prime_factors():
 def test_correct_number():
     winner = prime_factors(3958159172)
     assert winner == [2, 2, 11, 2347, 38329], f"expected [2, 2, 11, 2347, 38329], got {winner}"
+    winner = prime_factors(3)
+    assert winner == [3], f"expected [3], got {winner}"
 
 
 def test_illegal_input_format():
