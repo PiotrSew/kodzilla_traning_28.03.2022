@@ -25,6 +25,7 @@ if __name__ == '__main__':
     for test in (
             test_import_prime_factors,
             test_correct_number,
+            test_illegal_input_format,
     ):
         print(f'{test.__name__}: ', end='')
         try:
