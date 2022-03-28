@@ -2,6 +2,7 @@ import math
 
 
 def prime_factors(number):
+    check_input_argument(number)
     result = []
     while number % 2 == 0:
         result.append(2)
@@ -15,3 +16,8 @@ def prime_factors(number):
     if number > 2:
         result.append(number)
     return result
+
+
+def check_input_argument(number):
+    if type(number) != int:
+        raise ValueError('Incorrect type')
