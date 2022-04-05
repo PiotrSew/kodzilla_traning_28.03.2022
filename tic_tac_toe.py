@@ -1,3 +1,5 @@
+import re
+
 def tic_tac_toe_winner(board):
     check_arguments(board)
     return dummy_tic_tac_toe_algorithm(board)
@@ -19,10 +21,12 @@ def dummy_tic_tac_toe_algorithm(board):
 def check_arguments(board):
     if len(board) != 9:
         raise ValueError('Incorrect board')
+    if re.search('[^XO ]', board):
+        raise ValueError('Incorrect board')
     elif abs(board.count('X') - board.count('O')) > 1:
         raise ValueError('Incorrect number of marks')
 
-
+"""
 # TESTS
 test_boards = [('XOX  O XO', None),
                ('XO X OX  ', 'X'),
@@ -40,3 +44,4 @@ for board in incorrect_test_boards:
         tic_tac_toe_winner(board[0])
     except ValueError as err:
         assert str(err) == board[1]
+"""
