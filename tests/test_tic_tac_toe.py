@@ -1,7 +1,6 @@
 import unittest
 
-from tic_tac_toe import tic_tac_toe_winner
-
+from project.tic_tac_toe import tic_tac_toe_winner
 
 class TestFinishedGame(unittest.TestCase):  #➜ 1
 

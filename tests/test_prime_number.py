@@ -1,4 +1,4 @@
-from prime_factors import prime_factors
+from project.prime_factors import prime_factors
 
 
 def test_import_prime_factors():
