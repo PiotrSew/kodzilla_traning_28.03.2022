@@ -1,11 +1,12 @@
 import unittest
 
-from project.tic_tac_toe import tic_tac_toe_winner
+from project.tic_tac_toe.utilities import tic_tac_toe_winner
 
-class TestFinishedGame(unittest.TestCase):  #➜ 1
 
-    def test_3x_in_a_row(self):  #➜ 2
-        self.assertEqual(tic_tac_toe_winner('XXX O O  '), 'X')  #➜ 3
+class TestFinishedGame(unittest.TestCase):  # ➜ 1
+
+    def test_3x_in_a_row(self):  # ➜ 2
+        self.assertEqual(tic_tac_toe_winner('XXX O O  '), 'X')  # ➜ 3
 
     # kolejne testy dla planszy opisujących zakończone gry
 
@@ -13,7 +14,7 @@ class TestFinishedGame(unittest.TestCase):  #➜ 1
 class TestUnfinishedGame(unittest.TestCase):
 
     def test_empty_board(self):
-        self.assertIsNone(tic_tac_toe_winner(' '*9))  #➜ 4
+        self.assertIsNone(tic_tac_toe_winner(' ' * 9))  # ➜ 4
 
     # kolejne testy dla niezakończonych gier
 
@@ -21,7 +22,7 @@ class TestUnfinishedGame(unittest.TestCase):
 class TestInvalidBoard(unittest.TestCase):
 
     def test_illegal_symbols(self):
-        with self.assertRaises(ValueError):  #➜ 5
+        with self.assertRaises(ValueError):  # ➜ 5
             tic_tac_toe_winner('    E    ')
 
     # kolejne testy nieprawidłowego wejścia

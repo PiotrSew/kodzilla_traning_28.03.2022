@@ -1,4 +1,4 @@
-from tic_tac_toe import tic_tac_toe_winner  # ➜ 1
+from project.tic_tac_toe.utilities import tic_tac_toe_winner  # ➜ 1
 
 
 def test_import_tic_tac_toe_winner():
