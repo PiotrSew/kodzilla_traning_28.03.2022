@@ -3,7 +3,7 @@ num = [1, 4, 5, 9, 10, 40, 50, 90,
 sym = ["I", "IV", "V", "IX", "X", "XL",
        "L", "XC", "C", "CD", "D", "CM", "M"]
 roman_translator = dict(zip(sym, num))
-
+incorrect_symbols = ["IIII", "IIX"]
 
 def from_roman_to_int(roman):
     i = 0
@@ -13,7 +13,6 @@ def from_roman_to_int(roman):
             number += roman_translator[roman[i:i + 2]]
             i += 2
         else:
-            # print(i)
             number += roman_translator[roman[i]]
             i += 1
     return number
