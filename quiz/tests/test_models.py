@@ -1,6 +1,6 @@
 from uuid import uuid4
 import pytest
-from quiz.quizzes.models import calculate_points, QuizQuestion, QuizTaken, QuizResult, User
+from quizzes.models import calculate_points, QuizQuestion, QuizTaken, QuizResult, User
 
 
 @pytest.fixture
@@ -12,7 +12,8 @@ def new_user():
 
 @pytest.fixture
 def new_quiz_question():
-    quiz_question = QuizQuestion(question='text', correct_answer='correct', incorrect_answers="incorrect")
+    quiz_question = QuizQuestion(question='text', correct_answer='correct',
+                                 incorrect_answers=["incorrect_1", "incorrect_2", "incorrect_3"])
     return quiz_question
 
 
@@ -46,7 +47,7 @@ def test_new_user(new_user):
 def test_quiz_question(new_quiz_question):
     assert new_quiz_question.question == 'text'
     assert new_quiz_question.correct_answer == 'correct'
-    assert new_quiz_question.incorrect_answers == 'incorrect'
+    assert new_quiz_question.incorrect_answers == ["incorrect_1", "incorrect_2", "incorrect_3"]
 
 
 def test_quiz_taken(new_quiz_taken, new_quiz_question):

@@ -20,7 +20,7 @@ POINTS_MULTIPLIER = {
 class QuizQuestion:
     question: str
     correct_answer: str
-    incorrect_answers: str
+    incorrect_answers: List[str]
 
 
 @dataclass
