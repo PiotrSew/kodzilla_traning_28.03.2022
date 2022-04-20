@@ -28,8 +28,8 @@ def init_database():
 def global_vars_report(response: Response) -> Response:
     from quizzes import models
 
-    print(f"{models.quizzes_taken=}")
-    print(f"{models.quiz_results=}")
+    #print(f"{models.quizzes_taken=}")
+    #print(f"{models.quiz_results=}")
     return response
 
 

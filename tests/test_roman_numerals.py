@@ -1,4 +1,5 @@
 from project.roman_numerals import from_roman_to_int, from_int_to_roman
+import pytest
 
 correct_answers = {
     'I': 1,
@@ -10,12 +11,7 @@ correct_answers = {
     'MMMCMXCIX': 3999,
 }
 
-incorrect_answers = {
-    'IIII': 4,
-    'IIIIIIII': 8,
-    'XIIII': 14,
-    'IIIX': 6
-}
+incorrect_answers = ['IIII', 'IIIIIIII', 'XIIII', 'IIIX']
 
 
 def test_correct_answers_in_from_roman_to_int():
@@ -30,5 +26,5 @@ def test_correct_answers_in_from_int_to_roman():
 
 def test_incorrect_answers_in_from_roman_to_int():
     for roman in incorrect_answers:
-        assert from_roman_to_int(roman) == incorrect_answers[roman]
-
+        with pytest.raises(ValueError):
+            from_roman_to_int(roman)
